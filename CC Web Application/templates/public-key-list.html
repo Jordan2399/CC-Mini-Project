@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+	<title>SecuroSafe</title>
+	
+</head>
+<style>
+
+		
+
+		body {
+			display: table-cell;
+			vertical-align: middle;
+			background: url('beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			
+			color: #40514e;
+			text-align: left;
+			font-family: 'Ubuntu', sans-serif;
+		}
+
+		.container {
+			margin-top: 10%;
+			margin-left: 10%;
+		}
+</style>
+<body>
+	<div class="container">
+		{%if msg != ''%}
+		<h3>{{msg}}</h3>
+		{%else%}
+		<p style="font-size:20px"><b>The following are the different files stored on the cloud:</b></p>
+			<table>
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th>Uploader</th>
+					</tr>
+				</thead>
+				<tbody>
+						{%for itr in range(length):%}
+						<tr>
+							<td><a href="retrieve/key/{{directory[itr]}}">Click here to download public key</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>{{directory[itr]}}</td>
+						</tr>
+						{%endfor%}
+				</tbody>
+			</table>
+		{%endif%}
+	</div>
+	
+</body>
+</html>

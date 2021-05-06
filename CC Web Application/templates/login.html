@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		html {
+			display: table;
+			margin: auto;
+		}
+
+		body {
+			display: table-cell;
+			vertical-align: middle;
+			background-color: #e1e5ea;
+			align-content: center;
+			text-align: center;
+		}
+		input {
+			padding: 3%;
+			margin: 3%;
+		}
+
+	</style>
+</head>
+<body>
+	{% block body %}
+	{% if session['logged_in'] %}
+	<p>You're logged in already!</p>
+	{% else %}
+ 
+ 
+	<form action="/login" method="POST">
+		<div class="login">
+			<div class="login-screen">
+				<div class="app-title">
+					<h1>Login</h1>
+				</div>
+ 
+				<div class="login-form">
+					<div class="control-group">
+					<input type="text" class="login-field" value="" placeholder="username" name="username" width="20vw">
+					<label class="login-field-icon fui-user" for="login-name"></label>
+					</div>
+ 
+					<div class="control-group">
+					<input type="password" class="login-field" value="" placeholder="password" name="password" width="10vw">
+					<label class="login-field-icon fui-lock" for="login-pass"></label>
+					</div>
+ 
+                	<input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" width="20vw">
+			    	<br>
+				</div>
+			</div>
+		</div>
+	</form>
+ 
+	{% endif %}
+	{% endblock %}
+</body>
+</html>
